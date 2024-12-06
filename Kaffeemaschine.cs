@@ -29,16 +29,21 @@ namespace Kaffeemaschine
         {
             Console.WriteLine($"Aktuell sind noch {wasserstand} ml Wasser und {bohnenMenge} Gramm Kaffeebohnen im jeweiligen Tank.");
             Console.WriteLine($"\nEs können noch {maxWasserstand - wasserstand} ml Wasser und {maxBohnenmenge - bohnenMenge} Gramm Kaffeebohnen aufgefüllt werden.");
+            Console.ReadKey();
         }
         public void WasserNachfuellen()
         {
             wasserstand = maxWasserstand;
-            Console.WriteLine("Wasser wurde aufgefüllt!");
+            Console.Clear();
+            Console.WriteLine("\nWasser wurde aufgefüllt!");
+            Console.ReadKey();
         }
         public void BohnenNachfuellen()
         {
             bohnenMenge = maxBohnenmenge;
+            
             Console.WriteLine("Bohnen wurden aufgefüllt!");
+            Console.ReadKey();
         }
         public void KaffeMachen()
         {

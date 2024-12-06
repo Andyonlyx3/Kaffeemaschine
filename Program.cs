@@ -30,13 +30,45 @@
 
             Kaffeemaschine kaffeemaschine = new Kaffeemaschine(500, 100); //Startwert Wasserstand 0,5 Liter, Bohnenmenge 100 Gramm
 
-            Console.WriteLine("Wählen sie eine Option aus:");
+            while (true)
+            {
 
-            kaffeemaschine.KaffeMachen();
-            
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nBitte wählen Sie eine der folgenden Optionen aus:\n");
+                Console.WriteLine("1. Kaffe machen.");
+                Console.WriteLine("2. Füllmengen anzeigen.");
+                Console.WriteLine("3. Wasser nachfüllen.");
+                Console.WriteLine("4. Kaffeebohnen nachfüllen.");
+                Console.WriteLine("5. Beenden");
+
+                string auswahl = Console.ReadLine();
+
+                switch (auswahl)
+                {
+                    case "1":
+                        kaffeemaschine.KaffeMachen();
+                        break;
+                    case "2":
+                        kaffeemaschine.WerteAnzeigen();
+                        break;
+                    case "3":
+                        kaffeemaschine.WasserNachfuellen();
+                        break;
+                    case "4":
+                        kaffeemaschine.BohnenNachfuellen();
+                        break;
+                    case "5":
+                        Console.WriteLine("\nBis zum nächsten mal.");
+                        return;
+                    default:
+                        Console.WriteLine("\nEingabe ungültig!");
+                        Thread.Sleep(3000);
+                        break;
+                }
 
 
-
+            }
         }
     }
 }
